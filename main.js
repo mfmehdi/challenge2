@@ -43,16 +43,27 @@ What different attributes computers may have?
 Create two computers object from your factory function and save them in one array called computers!
 
 Note: please write one or two lines here describing your solution.
+
+
+==> return an object with pair key, value
 */
 
 function makeComputer(type, color, weight) {
-  // TODO: Your code here
+  return {type:type,
+  	       color:color,
+  		  weight:weight}
 }
+var computers=[];
+computers.push(makeComputer("hp", "blue", 1.5));
+computers.push(makeComputer("dell", "red", 2));
+
 
 // Write a function displayComputer that can be used to display one computer.
 
 function displayComputer(computer) {
   // TODO: Your code here
+  return "type:"+computer.type+ "---"+ "color:"+computer.color+ "---" +"weight:"+computer.weight;
+
 }
 
 //=============================================================================
@@ -74,6 +85,9 @@ uppercaseAll(strArr); ==> [ 'HELLO', 'WORLD', 'WHIRLED', 'PEAS' ]
 
 function uppercaseAll(arrayOfStrings) {
   // TODO: your code here
+ return map(arrayOfStrings,(val)=>{
+ 	return val.toUpperCase();
+ });
 }
 
 //=============================================================================
@@ -113,6 +127,10 @@ var data = [
 
 function highestPopulation(arrayOfObjects) {
   // TODO: your code here
+ return filter(arrayOfObjects,(countrie)=>{
+ 	return countrie.population>500000000;
+ }) 
+
 }
 
 //=============================================================================
@@ -129,10 +147,15 @@ var numsArray = [2, 6, 20, 8, 14];
 halveAll(numsArray); ==> [ 1, 3, 10, 4, 7 ]
 
 Note: please write one or two lines here describing your solution.
+
+==>with map iterate each element of array and return an element divided by 2
 */
 
 function halveAll(numbers) {
   // your code is here
+ return map(numbers,(val)=>{
+   return val/2;
+ });
 }
 
 //=============================================================================
@@ -146,9 +169,16 @@ Solve it using one of the most appropriate helpers functions(each,map,filter).
 values({first : 5, second: 'something' , third : 129}) ==> [5, 'something', 129];
 
 Note: please write one or two lines here describing your solution.
+using each : fists=> create varibale array :
+			second=> iterate object and access to each valu with key and push it in the array 
+			final=> return array with values 
 */
 function values(obj) {
   // TODO: your code here
-}
+  var array=[];
+  each(obj,(element,key)=>{
+  	return array.push(obj[key]);
+  });
+  return array;}
 
 //Good Luck :))
